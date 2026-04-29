@@ -1,7 +1,7 @@
-CREATE DATABASE db-usuarios;
+CREATE DATABASE db_usuarios;
 GO
 
-USE db-usuarios;
+USE db_usuarios;
 GO
 
 CREATE TABLE usuarios (
