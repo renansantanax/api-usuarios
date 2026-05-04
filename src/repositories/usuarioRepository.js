@@ -21,6 +21,24 @@ async function criar(usuario) {
   return result.recordset[0];
 }
 
+//Função para obter um usuário por email
+async function buscarPorEmail(email) {
+  //Obtém a conexão com o banco de dados
+  const pool = await getConnection();
+
+  //Executa a query de busca do usuário por email
+  const result = await pool.request().input("email", sql.VarChar(50), email)
+    .query(`
+            SELECT id, nome, email, senha, data_criacao
+            FROM usuarios
+            WHERE email = @email
+      `);
+
+  //Retornar os dados do usuário encontrado
+  return result.recordset[0];
+}
+
 module.exports = {
   criar,
+  buscarPorEmail,
 };
