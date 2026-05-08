@@ -7,7 +7,7 @@ require("dotenv").config();
 //Configuração para conectar no banco de dados SQL Server
 const dbConfig = {
   user: process.env.DB_USER, //Usuário do banco de dados
-  password: process.env.DB_PASS, //Senha do banco de dados
+  password: process.env.DB_PASSWORD, //Senha do banco de dados
   server: process.env.DB_SERVER, //Servidor do banco de dados
   port: parseInt(process.env.DB_PORT), //Porta do banco de dados
   database: process.env.DB_NAME, //Nome do banco de dados
